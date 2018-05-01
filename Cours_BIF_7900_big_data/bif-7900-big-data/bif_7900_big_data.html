@@ -1,0 +1,2172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Big Data | BIF-7900</title>
+
+	<meta name="description" content="Big Data for BIF-7900 course, Univ. Laval. Quebec">
+	<meta name="author" content="Regis Ongaro-Carcy">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/qtcreator_light.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+<body>
+	<base target="_blank">
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-background="img/bg_wait_4.gif" data-background-size="100%">
+				<h1 class='highlight-orange'>Big Data</h1>
+				<h3>BIF-7900</h3>
+			</section>
+			<section>
+				<section>
+					<h2>Bonjour</h2>
+				</section>
+				<section>
+					<p>
+						Régis Ongaro-Carcy<br/>
+						&<br/>
+						Gwenaëlle Lemoine
+					</br/>
+					</br/>
+					</p>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h1 class='highlight-orange'>Big Data</h1>
+				</section>
+				<section>
+					<h3>Au menu</h3>
+					<ul>
+						<li class='fragment' data-autoslide="750">Découvrir : <span class='highlight-orange'>quoi ?</span></li>
+						<li class='fragment' data-autoslide="750">Appréhender : <span class='highlight-orange'>pourquoi ?</span></li>
+						<li class='fragment' data-autoslide="750">Comprendre : <span class='highlight-orange'>comment ?</span></li>
+						<li class='fragment' data-autoslide="750">Appliquer : <span class='highlight-orange'>à quoi ?</span></li>
+						<li class='fragment'>Se projeter : <span class='highlight-orange'>et après ?</span></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Objectif</h3>
+					<p>Comprendre ce qu'est le Big Data, ses implications, enjeux et conséquences à différents niveaux</p>
+				</section>
+			</section>
+
+			<!--        -->
+			<!-- PART 1 -->
+			<!--        -->
+
+			<section>
+				<h1>1. <span class='highlight-orange'>Decouverte</span></h1>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Bref historique</h2>
+				</section>
+				<section>
+					<h3 class='highlight-orange'>1997</h3>
+					<h4>Michael Lesk</h4>
+				</section>
+				<section>
+					<p>
+						Publication web<br />
+						<em>"How much information is there in the world?"</em>
+					</p>
+					<p style='font-size: 14px'>
+						<a href='http://www.lesk.com/mlesk/ksg97/ksg.html' target='_blank'>Michael Lesk</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/michael_lesk.gif' width='550' />
+					<p style='font-size: 14px'>
+						<a href='http://www.lesk.com/mlesk/ksg97/ksg.html' target='_blank'>Michael Lesk</a>
+					</p>
+				</section>
+				<section>
+					<em>"So in only a few years, <span class='fragment'><span class='highlight-orange'>(a) we will be able to save everything</span>–no information will have to be thrown out,</span><span class='fragment'> and (b) the typical piece of information will never be looked at by a human being."</span></em>
+					<p style='font-size: 14px'>
+						<a href='http://www.lesk.com/mlesk/ksg97/ksg.html' target='_blank'>Michael Lesk</a>
+					</p>
+				</section>
+				<section>
+					<h3 class='highlight-orange'>1998</h3>
+					<h4>SGI, John R. Mashey</h4>
+				</section>
+				<section>
+					<img width='80%' src='img/big_data_mashey_1998.png' />
+					<p style='font-size: 14px'>
+						<a href='http://static.usenix.org/event/usenix99/invited_talks/mashey.pdf' target='_blank'>John R. Mashey (25 April 1998). "Big Data ... and the Next Wave of InfraStress" (PDF)</a> Slides from invited talk. Usenix. Retrieved 28 September 2016
+					</p>
+				</section>
+				<section>
+					<img width='80%' src='img/big_data_mashey_1998_2.png' />
+					<p style='font-size: 14px'>
+						<a href='http://static.usenix.org/event/usenix99/invited_talks/mashey.pdf' target='_blank'>John R. Mashey (25 April 1998). "Big Data ... and the Next Wave of InfraStress" (PDF)</a> Slides from invited talk. Usenix. Retrieved 28 September 2016
+					</p>
+				</section>
+				<section>
+					<h3 class='highlight-orange'>2001</h3>
+					<h4>GARTNER (ex. META Group), Douglas Laney</h4>
+				</section>
+				<section>
+					<p>
+						Rapport scientifique<br /> "3D Data Management: Controlling Data Volume, Velocity, and Variety"
+					</p><br />
+					<p style='font-size: 14px'>
+						<a href='http://www.gartner.com/newsroom/id/1731916' target='_blank'>Beyer, Mark. "Gartner Says Solving 'Big Data' Challenge Involves More Than Just Managing Volumes of Data". Gartner.</a> Archived from the original on 10 July 2011. Retrieved 13
+						July 2011<br />
+						<a href='http://blogs.gartner.com/doug-laney/files/2012/01/ad949-3D-Data-Management-Controlling-Data-Volume-Velocity-and-Variety.pdf' target='_blank'>Laney, Douglas. "3D Data Management: Controlling Data Volume, Velocity and Variety" (PDF). Gartner.</a> Retrieved 6 February 2001.
+					</p>
+				</section>
+				<section>
+					<h3>...</h3>
+				</section>
+				<section>
+					<h3>...<span class='highlight-orange'>2017</span></h3>
+				</section>
+			</section>
+
+			<!--        -->
+			<!-- DEFINITION -->
+			<!--        -->
+
+			<section>
+				<section>
+					<h2>Une définition peut-être... ?</h2>
+				</section>
+				<section>
+					<em>
+						"Le Big Data est en général défini par de gros volumes, une grande vélocité et une grande variété d'information qui demandent des formes d'innovation dans le traitement de l'information pour renforcer les constatations et les prises de décision."
+					</em>
+					<p style='text-align: right'>Gartner</p>
+				</section>
+				<section>
+					<em>"Le Big Data sont les données caractérisées par 3 attributs: volume, variété and vélocité"</em>
+					<p style='text-align: right'>IBM</p>
+				</section>
+				<section>
+					<em>"Le Big Data sont les données caractérisées par 4 attributs clés: volume, variété, vélocité et valeur"</em>
+					<p style='text-align: right'>Oracle</p>
+				</section>
+				<section>
+					<p>...</p>
+				</section>
+				<section>
+					<img src='img/meme_jacky_chan.png' />
+				</section>
+				<section>
+					<em>"Le Big data désigne des ensembles de données devenus si volumineux qu'ils dépassent l'intuition et les capacités humaines d'analyse et même celles des outils informatiques classiques de gestion de base de données ou de l'information."</em>
+					<p style='text-align: right'>Wikipedia</p>
+				</section>
+				<section>
+					<p>
+						Description largement utilisée
+					</p>
+					<ul>
+						<li class='fragment' data-autoslide="750">Volume</li>
+						<li class='fragment' data-autoslide="750">Vélocité</li>
+						<li class='fragment'>Variété</li>
+						<li class='fragment'><span class='highlight-orange'>Véracité</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<!--        -->
+			<!-- VOLUME -->
+			<!--        -->
+
+			<section>
+				<section>
+					<h2>Volume</h2>
+				</section>
+				<section>
+					<h3>Bit</h3>
+					<h4 class='fragment'>
+						<span class='fragment highlight-red' data-autoslide="750">0</span> or <span class='fragment highlight-green'>1</span>
+					</h4>
+				</section>
+				<section>
+					<h3>Octet</h3>
+					<h4 class='fragment'>8 bits</h4>
+					<div class='fragment'>
+						<img src='img/bit_octet_transparent.svg' width='800' />
+						<p style='font-size: 14px'>
+							<a href='https://www.iso.org/obp/ui/#iso:std:iso-iec:2382:ed-1:v1:en' target='_blank'>ISO/IEC 2382:2015</a>, chercher "byte"
+						</p>
+					</div>
+				</section>
+				<section>
+					<h3>Qu'est ce qu'un octet ?</h3>
+				</section>
+				<section>
+					<h3>C'est une <span class='highlight-orange'>unité</span> !</h3>
+				</section>
+				<section>
+					<h3>Molière vs. Shakespeare</h3>
+					<table>
+						<tr>
+							<th>Français</th>
+							<th>Anglais</th>
+							<th>Valeur</th>
+							<th>Notation</th>
+						</tr>
+						<tr>
+							<td>bit</td>
+							<td>bit</td>
+							<td>0 ou 1</td>
+							<td>'b'</td>
+						</tr>
+						<tr>
+							<td>octet</td>
+							<td>byte</td>
+							<td>8 bits</td>
+							<td>'o' ou 'B'</td>
+						</tr>
+					</table>
+				</section>
+
+
+
+
+				<!-- <section>
+					<p>Combien de caractères puis-je représenter ?</p>
+					<p class='fragment'>
+						Pour <span class='highlight-orange'>n</span> bits, on peut représenter
+						<span class='fragment'>2<sup><span class='highlight-orange'>n</span></sup></span> caractères
+					</p>
+				</section>
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th>Bits</th>
+								<th># représentable</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td class='fragment'>4</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td class='fragment'>16</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td class='fragment'>256</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td class='fragment'>65 536</td>
+							</tr>
+							<tr>
+								<td>32</td>
+								<td class='fragment'>4 294 967 296</td>
+							</tr>
+							<tr>
+								<td>64</td>
+								<td class='fragment'>18 446 744 073 709 551 616</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3><span class='highlight-orange'>ASCII</span></h3>
+					<p class='fragment'>
+						<span class='highlight-orange'>A</span>merican
+						<span class='highlight-orange'>S</span>tandard
+						<span class='highlight-orange'>C</span>ode for
+						<span class='highlight-orange'>I</span>nformation
+						<span class='highlight-orange'>I</span>nterchange
+					</p>
+					<p class='fragment'>
+						Standard basé sur 1 octet (256 caratères encodables)
+					</p>
+				</section>
+				<section>
+					<h3>Table ASCII</h3>
+					<img src='img/asciifull.gif' width='800' />
+				</section>
+				<section>
+					<h3>ASCII traduction binaire</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Caractère</th>
+								<th>Binaire</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>A</td>
+								<td>01000001</td>
+							</tr>
+							<tr>
+								<td>a</td>
+								<td>01100001</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section data-background-iframe="http://www.binaryhexconverter.com/ascii-text-to-binary-converter" data-background-interactive></section>
+				<section>
+					<h3><span class='highlight-orange'>UNICODE</span></h3>
+					<p class='fragment'>
+						Standard basé sur 1, 2 ou 4 octets <br />(UTF-8, UTF-16, UTF-32)
+					</p>
+					<p class='fragment'>
+						Actuellement 136 755 caratères utilisés
+					</p>
+				</section>
+				<section data-background-iframe="https://unicode-table.com/fr/" data-background-interactive></section> -->
+
+
+
+				<section>
+					<h3>Préfixes</h3>
+					<p style='text-align:right;font-size:14px'>
+						<img src="img/prefix_byte_scale.png" width="900" />
+						<a href='https://en.wikipedia.org/wiki/Binary_prefix' target='_blank'>Wikipedia</a>
+					</p>
+				</section>
+				<section data-background="img/power_ranger.gif" data-background-size="60%"></section>
+
+
+				<section>
+					<img src='img/big_data_wellman_1.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_2.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_3.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_4.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_5.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_6.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_7.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_8.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_9.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_10.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/big_data_wellman_11.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>What is Big Data? By David Wellman</a>
+					</p>
+				</section>
+
+
+				<section>
+					<h3>Technologies de stockage</h3>
+					<img src="img/evolution_technology.jpg" width="900" />
+				</section>
+				<section>
+					<h3>1956: IBM 305 - RAMAC</h3>
+					<img src='img/ramac_1956.jpeg' width='700' />
+					<p>
+						Mémoire totale = <span class='fragment'><b class='highlight-orange'>5 Mo</b> !</span>
+					</p>
+				</section>
+				<section>
+					<h3>Evolution du coût du Go</h3>
+					<img src='img/hdd_cost_per_gb_evolution.png' width='800' />
+					<p style='font-size: 14px'>
+						<a href='http://blog.experts-exchange.com/ee-blog/transformed-50-year-evolution-of-computers/' target='_blank'>blog.experts-exchange.com</a>
+					</p>
+				</section>
+				<section>
+					<h3>Conjecture de Kryder</h3>
+					<em>
+						En 15 ans, les disques durs ont augmenté leur capacité d'un facteur 1000 [...].
+					</em>
+					<p style='text-align:right;font-size:16px'>
+						<a href='https://www.scientificamerican.com/article/kryders-law/' target='_blank'>Kryder's law</a>
+					</p>
+				</section>
+				<section>
+					<h3>
+						2016: Southampton<br />
+						<a href='https://www.southampton.ac.uk/news/2016/02/5d-data-storage-update.page' target='_blank'>Superman memory crystal</a>
+					</h3>
+					<img src='img/superman_cristal_glass.jpg' width='550' />
+					<p>
+						Nanostructures auto-assemblées de quartz fondu, mémoire totale = <span class='fragment'><b class='highlight-orange'>360 To</b> !</span>
+					</p>
+				</section>
+				<section>
+					<h2>En biologie ?</h2>
+				</section>
+				<section data-background-iframe="https://www.illumina.com/systems/sequencing-platforms.html" data-background-interactive></section>
+				<!-- <section data-background-iframe="https://nanoporetech.com/products#comparison" data-background-interactive></section> -->
+				<section>
+					<a href='https://nanoporetech.com/products#comparison' target='_blank'>Comparaison produits Nanopore</a>
+				</section>
+			</section>
+
+			<!--        -->
+			<!-- VELOCITE -->
+			<!--        -->
+
+			<section>
+				<section>
+					<h2>Vélocité</h2>
+				</section>
+				<section>
+					<h3><span class='fragment highlight-red'>Loi</span> de Moore</h3>
+					<p>
+						Publiée le 19 avril 1965 dans le magazine Electronics
+					</p>
+					<p>
+						<span class='highlight-orange'>Gordon Earle Moore</span> + Robert Noyce + Andrew Grove = société Intel (1968), premier fabricant mondial de microprocesseurs
+					</p>
+				</section>
+				<section>
+					<h3>Conjecture de Moore</h3>
+					<em>
+						La complexité des semi-conducteurs double tous les ans à coût constant
+					</em>
+				</section>
+				<section>
+					<h3>Conjecture de Moore : évolution</h3>
+					<p>
+						<b>1965</b><br />
+						Intel: circuit le plus performant = 64 transistors<br />
+					</p>
+					<p>
+						<b>2017</b><br />
+						Intel: Core Xeon E7-8870 = <span class='fragment'><b class='highlight-orange'>2,6 milliards</b></span><br />
+						AMD: Ryzen ThreadRipper 1950x = <span class='fragment'><b class='highlight-orange'>9,6 milliards</b></span>
+					</p>
+				</section>
+				<section>
+					<h3>Conjecture de Moore : évolution</h3>
+					<p>
+						<b>5 Jun 2017</b><br />
+						<a href='https://www-03.ibm.com/press/us/en/pressrelease/52531.wss' target='_blank'>IBM: 30 Milliards</a>
+					</p>
+				</section>
+				<section>
+					<img src='img/intel-core-i7-die-diagram.jpg' width='800'/>
+					<p style='font-size: 14px'>
+						<a href='https://www.roadtovr.com/intel-vr-ready-processor-integrated-graphics-intel-hd-core-i9-x-series/' target='_blank'>RoadtoVR - Core i7 Die Shot</a>
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Supercomputers</h2>
+				</section>
+
+				<section>
+					<img src='img/Tianhe-2.jpg' width='780'/>
+					<p style='font-size: 14px'>
+						<a href='https://en.wikipedia.org/wiki/Tianhe-2' target='_blank'>Wikipedia, Tianhe-2, 2nd most powerful supercomputer</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>Quelques statistiques...</h3>
+					<p>
+						Coeurs: <b class='highlight-orange'>3 120 000</b><br />
+						Mémoire: <b class='highlight-orange'>1 024 000 GB</b><br />
+						Puissance: <b class='highlight-orange'>17 808,00 kW (without cooling system)</b><br />
+						Coût: <b class='highlight-orange'>>455 000 000 CAD</b><br />
+						Linpack Performance (Rmax): <b class='highlight-orange'>33 862,7 TFlops</b><br />
+						Theoretical Peak (Rpeak): <b class='highlight-orange'>54 902,4 TFlops</b><br />
+					</p>
+					<p style='font-size: 14px'>
+						<a href='https://www.top500.org/lists/2017/06/' target='_blank'>TOP 500, July 2017</a><br/>
+						<a href='https://en.wikipedia.org/wiki/FLOPS' target='_blank'>Wikipedia FLOPS</a><br/>
+						<a href='https://en.wikipedia.org/wiki/Nuclear_power_in_Canada' target='_blank'>Canada nuclear power plant</a><br/>
+					</br/>
+					</p>
+				</section>
+
+				<section>
+					<img src='img/haddock_flops.jpeg' width='600'/>
+				</section>
+
+				<section>
+					<h2>En biologie ?</h2>
+				</section>
+
+				<section>
+					<img src='img/MR_stratton_et_al_nature_improvements_rna_sequencing_over_rate_30y.png' width='800'/>
+					<p style='font-size: 14px'>
+						Improvements in the rate of DNA sequencing over the past 30 years and into the future,
+						<a href='https://www.nature.com/nature/journal/v458/n7239/full/nature07943.html' target='_blank'>
+							MR Stratton et al. Nature 458, 719-724 (2009) doi:10.1038/nature07943
+						</a>
+					</p>
+				</section>
+
+
+				<section data-background-iframe="https://www.illumina.com/systems/sequencing-platforms.html" data-background-interactive></section>
+				<!-- <section data-background-iframe="https://nanoporetech.com/products#comparison" data-background-interactive></section> -->
+				<section>
+					<a href='https://nanoporetech.com/products#comparison' target='_blank'>Comparaison produits Nanopore</a>
+				</section>
+			</section>
+
+
+			<!--        -->
+			<!-- VARIETE -->
+			<!--        -->
+
+			<section>
+				<section>
+					<h2>Variété</h2>
+				</section>
+				<section><h3>C'est quoi ?</h3></section>
+				<section>
+					<h4><span class="fragment highlight-red">Hétérogénicité</span> des données en terme :</h4>
+					<ul>
+						<li class="fragment"><span class="highlight-orange">De format</span></br>
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Sous quel est représentée la donnée ?</li>
+						<li class="fragment"><span class="highlight-orange">De structure</span></br>
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Comment s'organise la donnée ?</li>
+						<li class="fragment"><span class="highlight-orange">D'interprétation</span></br>
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Que déduit-on de la donnée ?</li>
+						<li class="fragment"><span class="highlight-orange">D'obtention</span></br>
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Par quel moyen a-t-on récupéré la donnée ?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange">Format</h4>
+					<div style="display:flex;flex-direction:row;">
+						<div class="fragment" style="width:50%;float:left;display:flex;">
+							<ul class="fa-ul" style="list-style-type: none;font-size:80%;">
+								<li style="margin:55px;"><i class="fa-li fa fa-font" aria-hidden="true"></i>Du texte</li>
+								<li style="margin:55px;"><i class="fa-li fa fa-picture-o" aria-hidden="true"></i>Une image</li>
+								<li style="margin:55px;"><i class="fa-li fa fa-video-camera" aria-hidden="true"></i>Une vidéo</li>
+								<li style="margin:55px;"><i class="fa-li fa fa-volume-up" aria-hidden="true"></i>Un son</li>
+								<li style="margin:55px;"><i class="fa-li fa fa-question" aria-hidden="true"></i>Etc.</li>
+							</ul>
+						</div>
+						<div style="width:50%;float:right;display:flex;justify-content: space-between;">
+							<div style="flex-direction:column; width:auto;height:100%">
+								<div class="fragment" style="font-size:50%; height:5%;margin:10px;">
+									<pre style="font-family:Courier,mono;">
+			        A___A
+			  ____ / o o \
+			/~____   ='= /
+			(______)__m_m_)
+									</pre>
+								</div>
+								<div class="fragment" style="height:20%;margin:10px;">
+									<img src="img/grumpyCat.png" style=";background-color:#FFFFFF; height:auto; width:auto;" />
+								</div>
+								<div class="fragment" style="height:25%;margin:10px;">
+									<img src="img/catDisappear.gif" style="height:auto; width:auto;"/>
+								</div>
+								<div class="fragment" style="height:10%;margin:20px;">
+									<audio controls><source src="sound/CatMeow.mp3" type="audio/mpeg"></audio>
+									<a href="http://www.orangefreesounds.com/cat-meowing-and-purring-sound/" style="font-size:30%;">Source</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange">Structure</h4>
+					<table>
+						<tr class="fragment" data-fragment-index="1">
+							<th style="width:33%">Structuré</th>
+							<th style="width:33%">Semi-structuré</th>
+							<th style="width:33%">Non structuré</th>
+						</tr>
+						<tr>
+							<th class="fragment" data-fragment-index="2">
+								<form style="display:inline-block;vertical-align:middle;">
+									<input type="text" name="firstname" value="Prénom"><br>
+									<input type="text" name="lastname" value="Nom"><br>
+									<input type="text" name="lastname" value="Age"><br>
+									<span style="font-size:70%">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+									</span>
+								</form>
+							</th>
+							<th class="fragment" data-fragment-index="4">
+								<form style="display:inline-block;vertical-align:middle;">
+									<input type="text" name="firstname" value="Prénom"><br/>
+									<input type="text" name="lastname" value="Nom"><br/>
+									<input type="text" name="lastname" value="Age [optionnel]"><br/>
+									<textarea rows="4" cols="25" style="margin-top:20px">Donnez votre avis [optionnel]</textarea>
+								</form>
+							</th>
+							<th class="fragment" data-fragment-index="3">
+								<form style="display:inline-block;vertical-align:middle;">
+									<!-- <input type="text" style="height:50px" name="firstname" value="Donnez votre nom, prénom et age*"> -->
+									<textarea rows="7" cols="35">Donnez votre nom, prénom et age [optionnel]</textarea>
+								</form>
+							</th>
+						</tr>
+					</table>
+					</br></br>
+					<div  class="fragment" style="font-size:30%">
+						<span><a href="http://ceur-ws.org/Vol-464/paper-14.pdf">Pour aller plus loin : Combining Unstructured, Fully Structured and Semi-Structured Information in Semantic Wikis</a></span></br>
+						<span>Rolf Sint, Sebastian Schaffert, Stephanie Stroka, Roland Ferstl (2009), In: 4th Workshop on Semantic Wikis (SemWiki2009) at ESWC09, Heraklion, Greece, June 2009.</span>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange">Interprétation</h4>
+					<div class="fragment">
+							<img src="img/MB.png" width="80%" />
+							<div>Quelles informations tirez-vous de cette image ?</div>
+					</div>
+				</section>
+				<section>
+					<img src="img/machine-learning.jpg" width="90%"/>
+				</section>
+				<section>
+					<img src="img/Idontthinkso.png"/>
+					<p>Mais on y reviendra...</p>
+				</section>
+				<section>
+					<div style="display:flex;margin:30px">
+						<div style="width:70%;float:left;">
+							<img src="img/MB_annot.png"/>
+						</div>
+						<div style="width:30%;float:right;font-size:60%">
+							<ul>
+								<li><i class="fa fa-stop" aria-hidden="true"></i> Aiguille du midi</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#deb3e2"></i> Dôme de Rochefort</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#903e23"></i> Mont Blanc du Tacul</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#e2bb2b"></i> Mont Maudit</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#e20b0b"></i> Mont Blanc</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#48d82b"></i> Aiguille de Bionnassay</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#a5a5a5"></i> Col de Miage</li>
+								<li><i class="fa fa-stop" aria-hidden="true" style="color:#77eadf"></i> Dômes de Miage</li>
+							</ul>
+						</div>
+					</div>
+					<div class="fragment" style="display:block;">
+						Mais aussi...
+					</div>
+				</section>
+				<section>
+					<div style="width:40%;float:left;">
+						<img src="img/MB.png" style="margin-top:40%"/>
+					</div>
+					<div style="width:50%;float:right;font-size:60%;">
+						<ul>
+							<li style="margin-top:20px;" >Distance + angle</br>
+								<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Position de prise de photo <img src="img/MB_position.png" />
+							<li style="margin-top:20px;">Altitude de présence de neige</br>
+								<i class="fa fa-long-arrow-right" aria-hidden="true"></i> Période de l'année approximative</li>
+							<li style="margin-top:20px;">Etc.</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h4 class="highlight-orange">Obtention</h4>
+					<ul class="fa-ul" style="list-style-type: none;">
+						<li class="fragment"><i class="fa-li fa fa-pencil" aria-hidden="true"></i>Des informations relevées à la main</li>
+						<li class="fragment"><i class="fa-li fa fa-server" aria-hidden="true"></i>Une sortie d'une machine</li>
+						<li class="fragment"><i class="fa-li fa fa-handshake-o" aria-hidden="true"></i>Un échange d'information avec d'autres personnes</li>
+						<li class="fragment"><i class="fa-li fa fa-users" aria-hidden="true"></i>Des données publiques disponible en ligne</li>
+						<li class="fragment"><i class="fa-li fa fa-question" aria-hidden="true"></i>Etc.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>En biologie ?</h3>
+				</section>
+				<section>
+					<table style="width:100%;">
+						<tr style="">
+							<th class="highlight-orange" style="text-align:center;width:50%;padding-right:20%;">FORMAT</th>
+							<th class="highlight-orange" style="text-align:center">STRUCTURE</th>
+						</tr>
+						<tr>
+							<td class="fragment">
+								<div style="margin-top:15px">
+									<span style="font-size:70%">ATGACGGAATATAAGCTGGTG</span>
+								</div>
+								<div style="margin-top:15px">
+									<img src="img/DNA_Overview2.png" style="background-color:#FFFFFF;" width="70%"/>
+									<a href="https://upload.wikimedia.org/wikipedia/commons/e/e4/DNA_Overview2.png" style="font-size:30%;float:right;width:20%;margin-top:10%">Source</a>
+								</div>
+								<div style="margin-top:15px">
+									<img src="https://media.giphy.com/media/3ohhwlMl4wSDTNsTNS/giphy.gif" width="80%"/>
+								</div>
+								<div style="margin-top:15px">
+									<audio controls><source src="sound/DNA_sound.mp3" type="audio/mpeg"></audio>
+									<a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1632-x" style="font-size:30%;">Source</a>
+								</div>
+							</td>
+							<td class="fragment">
+								<div style="margin-top:25px">
+									<div style="font-size:35%;width:80%;font-family:Courier;display:table-cell;">
+										A ........ Ala ........ Alanine</br>
+										B ........ Asx ........ Asparagine</br>
+										C ........ Cys ........ Cysteine</br>
+										D ........ Asp ........ Aspartic Acid</br>
+										etc.
+									</div>
+									<div style="display:table-cell;width:20%">
+										<a href="http://www.bioinformatics.org/sms2/iupac.html" style="font-size:30%;float:right;">Source</a>
+									</div>
+								</div>
+								<div style="margin-top:25px">
+									<img src="img/BioSemiStruct_Phylogeny.png" style="width:70%;"/>
+									<a href="https://fr.wikipedia.org/wiki/Rang_taxonomique" style="font-size:30%;width:20%;float:right;margin-top:15%">Source</a>
+								</div>
+								<div style="margin-top:25px">
+									<div style="font-size:50%;">FastQ file</div>
+									<div style="font-size:30%;font-family:Courier;">
+										@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817 length=36</br>
+										GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACC</br>
+										+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817 length=36</br>
+										IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9IC</br>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<table style="width:100%;">
+						<tr>
+							<th class="highlight-orange" style="text-align:center">INTERPRETATION</th>
+							<th class="highlight-orange" style="text-align:center">OBTENTION</th>
+						</tr>
+						<tr>
+							<td class="fragment" style="display:inline-block;margin-right:50px;vertical-align: middle;">
+								<div style="font-size:50%;margin-left:10%;">Séquence protéique</div>
+								<div style="font-size:30%;font-family:Courier;margin-left:10%;">
+									>sp|P04637|P53_HUMAN Cellular tumor antigen p53 OS=Homo sapiens
+									MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP
+									DEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAK
+									SVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHE
+									RCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNS
+									SCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELP
+									PGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPG
+									GSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
+								</div>
+								<div style="text-align:center"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+								<div><img src="img/p53_2ndStruct.png" style="width:100%"/></div>
+								<div style="">
+									<div style="width:45%;float:left;"><img src="img/P53_surface_charge.png"/></div>
+									<div style="width:35%;float:right;"><img src="img/P53_bindingSite.png"/></div>
+								</div>
+							</td>
+							<td class="fragment" style="vertical-align: middle;">
+								<ul class="fa-ul" style="list-style-type: none;font-size:50%;">
+									<li style=""><i class="fa-li fa fa-pencil" aria-hidden="true"></i>Des relevés de manip sur un cahier de laboratoire</li>
+									<li style="margin-top:20px;"><i class="fa-li fa fa-server" aria-hidden="true"></i>Une sortie d'un HPLC, d'un MS, etc.</li>
+									<li style="margin-top:20px;"><i class="fa-li fa fa-handshake-o" aria-hidden="true"></i>Un échange d'information avec d'autres chercheurs</li>
+									<li style="margin-top:20px;"><i class="fa-li fa fa-users" aria-hidden="true"></i>EMBL, Uniprot, Ensembl, KEGG, etc.</li>
+									<li style="margin-top:20px;"><i class="fa-li fa fa-question" aria-hidden="true"></i>Etc.</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+
+
+
+
+			<!--        -->
+			<!-- VERACITE -->
+			<!--        -->
+
+			<section>
+				<section>
+					<h2>Véracité</h2>
+				</section>
+
+				<section>
+					<ul>
+						<li>Volume</li>
+						<li>Vélocité</li>
+						<li>Variété</li>
+						<li><span class='highlight-orange'>Véracité</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<span class='fragment highlight-green'>VRAI</span> vs. <span class='fragment highlight-red'>FAUX</span>
+				</section>
+
+
+				<section>
+					<table>
+						<tr>
+							<th></th>
+							<th>Positif</th>
+							<th>Négatif</th>
+						</tr>
+						<tr>
+							<td><span class='fragment highlight-green'>VRAI</span></td>
+							<td>vrai-positif &nbsp; <i class="fa fa-check" aria-hidden="true"></i></td>
+							<td>vrai-négatif &nbsp; <i class="fa fa-check" aria-hidden="true"></i></td>
+						</tr>
+						<tr>
+							<td><span class='fragment highlight-red'>FAUX</span></td>
+							<td>faux-positif &nbsp; <i class="fa fa-close" aria-hidden="true"></i></td>
+							<td>faux-négatif &nbsp; <i class="fa fa-close" aria-hidden="true"></i></td>
+						</tr>
+					</table>
+				</section>
+
+				<section data-background-image="img/charlie.jpeg" data-background-size="90%"></section>
+
+				<section>
+					<h2>Données non raffinées<br/>=<br/>données à faible densité en information</h2>
+				</section>
+
+				<section>
+					<h2>Opérateur binaire</h2>
+				</section>
+
+				<section>
+					<img src="img/db_matching_1.png" width="90%"/>
+				</section>
+				<section>
+					<img src="img/db_matching_2.png" width="90%"/>
+				</section>
+				<section>
+					<img src="img/db_matching_3.png" width="80%"/>
+				</section>
+				<section>
+					<img src="img/db_matching_4.png" width="80%"/>
+				</section>
+				<section>
+					<img src="img/db_matching_5.png" width="90%"/>
+				</section>
+				<section>
+					<img src="img/db_matching_6.png" width="90%"/>
+				</section>
+
+
+				<section>
+					<h2>La véracité du résultat dépend du contexte de recherche et des opérations choisies</h2>
+				</section>
+
+				<section>
+					<h2>En biologie ?</h2>
+				</section>
+
+				<section>
+					<h2>Faux-négatif</h2>
+					Exemple:<br />
+					<pre><code data-trim data-noescape>Ensembl ID: ENSG00000143578.11
+gene symbol: CREB3L4</code></pre>
+				</section>
+
+				<section data-background-iframe="http://www.ensembl.org/index.html" data-background-interactive></section>
+
+				<section>
+					<h2>Faux-négatif</h2>
+					ENSG00000143578.<span class='highlight-orange'>11</span> &#10132; ENSG00000143578.<span class='highlight-orange'>15</span><br/>
+					Même gène: CREB3L4
+				</br/>
+				</section>
+
+				<section>
+					<h3>Les "FAUX" proviennent...</h3>
+					<ul>
+						<li>de la variabilité du vivant</li>
+						<li>des manipulations (physique et des données)</li>
+						<li>de la précision/l'imprécision des outils</li>
+						<li>des moyens limités</li>
+						<li>du manque de méthodes de confirmations</li>
+						<li>d'interprétation incorrectes</li>
+						<li>etc.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Séquencer: diminuer le risque</h3>
+					<ul>
+						<li>Quelle plateforme de sequençage choisir ?</li>
+						<li>Combiner plusieurs technologies ?</li>
+						<li>Quelle profondeur ?</li>
+						<li>Besoin de réplicats ?</li>
+						<li>Etc.</li>
+					</ul>
+				</section>
+
+				<section data-background-iframe="https://www.illumina.com/systems/sequencing-platforms.html" data-background-interactive></section>
+				<!-- <section data-background-iframe="https://nanoporetech.com/products#comparison" data-background-interactive></section> -->
+				<section>
+					<a href='https://nanoporetech.com/products#comparison' target='_blank'>Comparaison produits Nanopore</a>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Pour résumer</h2>
+				</section>
+
+
+				<section>
+					<h3>Volume</h3>
+					<img src="img/resume_volume.png" width="100%"/>
+				</section>
+				<section>
+					<h3>Vélocité</h3>
+					<img src="img/resume_velocite.png" width="100%"/>
+				</section>
+				<section>
+					<h3>Variété</h3>
+					<img src="img/resume_variete.png" width="100%"/>
+				</section>
+				<section>
+					<h3>Véracité</h3>
+					<img src="img/resume_veracite.png" width="100%"/>
+				</section>
+			</section>
+
+
+
+
+
+			<section>
+				<h1 class='highlight-orange'>PAUSE</h1>
+			</section>
+
+
+
+
+			<!--        -->
+			<!-- PART 2 -->
+			<!--        -->
+
+
+
+			<section>
+				<h1>2. <span class='highlight-orange'>APPLICATION</span></h1>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Industrie</h2>
+				</section>
+
+				<section>
+					<img src='img/big_data_wellman_11.png' width='800' />
+					<p style='font-size:14px'>
+						<a href='https://www.slideshare.net/dwellman/what-is-big-data-24401517' target='_blank'>
+							What is Big Data? By David Wellman
+						</a>
+					</p>
+				</section>
+
+
+
+				<section>
+					<h2>GAFAM</h2>
+					<p>
+						<span class="fragment"><span class='highlight-orange'>G</span>oogle</span>
+						<span class="fragment"><span class='highlight-orange'>A</span>pple</span>
+						<span class="fragment"><span class='highlight-orange'>F</span>acebook</span>
+						<span class="fragment"><span class='highlight-orange'>A</span>mazon</span>
+						<span class="fragment"><span class='highlight-orange'>M</span>icrosoft</span>
+					</p>
+				</section>
+
+
+				<section>
+					<img src="img/google_logo.png" width="80px" />
+					<h2>Google</h2>
+				</section>
+
+				<section>
+					<h2>Quelques statistiques</h2>
+					<ul>
+						<li>1er moteur de recherche</li>
+						<li>1998 : indexation du web</li>
+						<li>45000 recherches par seconde</li>
+						<li>90% des internautes</li>
+						<li>Site le plus consulté</li>
+						<li>Algorithmes de ranking propre à Google</li>
+					</p>
+
+					<p style='font-size:14px'>
+						Framasoft - présentation -
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Degooglisons Internet
+						</a>,
+						mars 2016 - pyg, framatophe
+					</p>
+				</section>
+
+				<section>
+					<h2>Autres services</h2>
+					<ul style='font-size:30px'>
+						<li class="fragment">GMail : 2013 = 500 millions de comptes, 2016 = 1 milliard</li>
+						<li class="fragment">GDrive : 2013 = 120 millions de comptes</li>
+						<li class="fragment">Youtube : 1 milliard d'utilisateurs par mois, 100h de vidéos uploadés par minute, 1er média mondial, 6% du traffic internet</li>
+						<li class="fragment">GDevelopers : outils Google pour développeurs</li>
+						<li class="fragment">GAnalytics : 70% de part de marché de la mesure statistiques web</li>
+						<li class="fragment">GMaps : géolocalisation fine, notamment avec Android</li>
+						<li class="fragment">GAdSense : $13 milliard par mois</li>
+						<li class="fragment">etc</li>
+					</ul>
+
+					<p class="fragment">
+						<span class='highlight-orange'>Couplage</span> entre tous les services !
+					</p>
+
+					<p style='font-size:14px'>
+						Framasoft - présentation -
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Degooglisons Internet
+						</a>,
+						mars 2016 - pyg, framatophe
+					</p>
+				</section>
+
+				<section>
+					<img src="img/google_acquisition.png" width="80%" />
+					<p style='font-size:14px'>
+						Framasoft - présentation -
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Degooglisons Internet
+						</a>,
+						mars 2016 - pyg, framatophe
+					</p>
+				</section>
+
+				<section>
+					<h2>Autres produits</h2>
+					<div style="float:left; font-size:0.8em">
+						<ul>
+							<li class="fragment">Lunettes RA : <a href="https://x.company/glass/">Glass</a></li>
+							<li class="fragment">Voiture intelligentes : <a href="https://waymo.com/">Waymo</a></li>
+							<li class="fragment">Habits/textile : <a href="https://atap.google.com/jacquard/">Jacquard</a></li>
+							<li class="fragment">Santé : <a href="https://verily.com/">Verily</a></li>
+							<li class="fragment">Montres connectées : <a href="https://www.android.com/wear/">Wear</a></li>
+							<li class="fragment">Réalité augmentée : <a href="https://get.google.com/tango/">Tango</a></li>
+							<li class="fragment">Bâtiments : <a href="https://flux.io/howitworks/">Flux</a></li>
+							<li class="fragment">et d'autres : <a href="https://x.company/graduated">x.company</a></li>
+						</p>
+					</div>
+					<div style="float:right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:300px; line-height:300px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+
+
+				<section>
+					<img src="img/apple_logo.svg" width="80px" />
+					<h2>Apple</h2>
+				</section>
+
+				<section>
+					<p>Janvier 2016, 1 milliards d'appareils Apple actifs dans le monde</p>
+				</section>
+
+				<section>
+					<h2>Produits</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Mac</li>
+								<li class="fragment">iPod</li>
+								<li class="fragment">iPhone</li>
+								<li class="fragment">iPad</li>
+								<li class="fragment">Apple Watch</li>
+								<li class="fragment">Apple TV</li>
+								<li class="fragment">Electric vehicles</li>
+								<li class="fragment">Apple Energy</li>
+								<li class="fragment">Software...</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:400px; line-height:400px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+
+
+
+
+				<section>
+					<img src="img/fb_logo.png" width="80px" />
+					<h2>Facebook</h2>
+				</section>
+
+				<section>
+					<img src="img/Facebook_popularity.PNG" width="80%" />
+					<p style='font-size:14px'>
+						<a href='https://en.wikipedia.org/wiki/Facebook#User_growth' target='_blank'>
+							Wikipedia
+						</a>, nombre d'utilisateurs connectés par 6 mois (en millions)
+					</p>
+				</section>
+
+				<section>
+					<h3>2012</h3>
+					Tous les jours...<br/>
+					<div class='fragment'><span class='highlight-orange'>100+Po</span> d'espace disque occupés</div>
+					<div class='fragment'><span class='highlight-orange'>500+To</span> de données</div>
+					<div class='fragment'><span class='highlight-orange'>105To</span> scanné toutes les 30 minutes</div>
+					<p style='font-size:14px'>
+						<a href='https://techcrunch.com/2012/08/22/how-big-is-facebooks-data-2-5-billion-pieces-of-content-and-500-terabytes-ingested-every-day/' target='_blank'>
+							How Big Is Facebook’s Data? 2.5 Billion Pieces Of Content And 500+ Terabytes Ingested Every Day
+						</a>, 22 août 2012, TechCrunch<br/>
+						<a href='https://code.facebook.com/posts/229861827208629/scaling-the-facebook-data-warehouse-to-300-pb/' target='_blank'>
+							Scaling the Facebook data warehouse to 300 PB
+						</a>, 10 avril 2014, Facebook code
+					</p>
+				</section>
+
+				<section>
+					<h3>2017</h3>
+					<div class="fragment">
+						Nombre d'utilisateurs sur le site web :
+						<ul>
+							<li>actifs par mois: <span class='highlight-orange'>2.07 milliards</span></li>
+							<li><span class='highlight-orange'>+16%</span> année après année</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top:20px">
+						Nombre d'utilisateurs sur mobile :
+						<ul>
+							<li>actifs par mois: <span class='highlight-orange'>1.15 milliards</span></li>
+							<li><span class='highlight-orange'>+23%</span> année après année</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top:20px">
+						<span class='highlight-orange'>88%</span> du revenu provient de la publicité sur mobile
+					</div>
+					<p style='font-size:14px'>
+						Facebook, updated 11/01/2017
+					</p>
+				</section>
+
+				<section>
+					<h2>Facebook companies</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Facebook, Inc.</li>
+								<li class="fragment">Facebook Payments, Inc.</li>
+								<li class="fragment">Oculus</li>
+								<li class="fragment">WhatsApp, Inc.</li>
+								<li class="fragment">Instagram LLC</li>
+								<li class="fragment">Atlas</li>
+								<li class="fragment">Onavo</li>
+								<li class="fragment">Moves</li>
+								<li class="fragment">Masquerade</li>
+								<li class="fragment">CrowdTangle</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:430px; line-height:430px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+				<section>
+					<img src="img/fb_whatsapp.jpeg" width="50%" />
+				</section>
+
+				<section>
+					<img src="img/amazon_logo.jpeg" width="80px" />
+					<h2>Amazon</h2>
+				</section>
+
+				<section>
+					<h2>Amazon companies</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Twitch.tv</li>
+								<li class="fragment">Whole Foods</li>
+								<li class="fragment">Alexa Internet</li>
+								<li class="fragment">Amazon Books</li>
+								<li class="fragment">Amazon Game Studios</li>
+								<li class="fragment">Amazon Lab126</li>
+								<li class="fragment">Amazon Studios</li>
+								<li class="fragment">Amazon Web Services</li>
+								<li class="fragment">Etc.</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:430px; line-height:430px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Janvier 2011 - Kindle</h3>
+					<div class="fragment" style="margin-top:20px">
+						U.S. Kindle Store : <span class='highlight-orange'>&gt;810,000 books</span>
+					</div>
+					<div class="fragment" style="margin-top:20px">
+						<i>"[...] for every 100 paperback books Amazon has sold, the company has sold 115 Kindle books [...]"</i>
+					</div>
+
+					<p style='font-size:14px'>
+						<a href="https://www.theguardian.com/world/richard-adams-blog/2011/jan/28/amazon-kindle-ebook-paperback-sales">
+							Amazon's ebook sales eclipse paperbacks for the first time
+						</a>, The Guardian, 28/01/2011<br/>
+						<a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&p=irol-newsArticle&ID=1521090&highlight&ref=tsm_1_tw_kin_prearn_20110127">
+							Amazon Press Release
+						</a>, 27/01/2011
+					</p>
+				</section>
+
+				<section>
+					<h3>Janvier 2017 - Kindle</h3>
+					<div class="fragment" style="margin-top:20px">
+						Nombre d'e-books : <span class='highlight-orange'>&gt;3.4 millions</span>
+					</div>
+					<div class="fragment" style="margin-top:20px">
+						Nombre total de livres : <span class='highlight-orange'>48.5 millions</span>
+					</div>
+
+					<p style='font-size:14px'>
+						<a href="https://www.justpublishingadvice.com/how-many-kindle-ebooks-are-there/">
+							How Many Kindle eBooks Are There? There are millions of Kindle ebooks!
+						</a>, Derek Haines, publié 22/08/2014, màj 21/09/2017
+					</p>
+				</section>
+
+				<section>
+					<h2>Produits</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Kindle</li>
+								<li class="fragment">Amazon Fire TV</li>
+								<li class="fragment">Fire Tablets</li>
+								<li class="fragment">Prime Air</li>
+								<li class="fragment">Amazon Echo</li>
+								<li class="fragment">Amazon Web Service</li>
+								<li class="fragment">Amazon Fresh</li>
+								<li class="fragment">Etc.</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:400px; line-height:400px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+
+
+				<section>
+					<img src="img/microsoft_logo.png" width="80px" />
+					<h2>Microsoft</h2>
+				</section>
+
+				<section>
+					<img src="img/Microsoft-Staff-1978.jpg" width="75%" />
+					<p style='font-size:14px'>
+						<a href="https://en.wikipedia.org/wiki/History_of_Microsoft">
+							History of Microsoft
+						</a>, prise en 1978, Wikipedia
+					</p>
+				</section>
+
+				<section>
+					<h2>Produits</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Windows</li>
+								<li class="fragment">Office</li>
+								<li class="fragment">Servers</li>
+								<li class="fragment">Skype</li>
+								<li class="fragment">Xbox</li>
+								<li class="fragment">Visual Studio</li>
+								<li class="fragment">Dynamics</li>
+								<li class="fragment">Surface</li>
+								<li class="fragment">
+									<a href="https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Microsoft">Etc.</a>
+								</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:400px; line-height:400px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+				<section>
+					<h2>Services</h2>
+					<div style="float: left">
+						<p>
+							<ul>
+								<li class="fragment">Azure</li>
+								<li class="fragment">Bing</li>
+								<li class="fragment">LinkedIn</li>
+								<li class="fragment">Outlook.com</li>
+								<li class="fragment">Xbox Live</li>
+								<li class="fragment">MSDN</li>
+								<li class="fragment">Office 365</li>
+								<li class="fragment">OneDrive</li>
+								<li class="fragment">Etc.</li>
+							</ul>
+						</p>
+					</div>
+					<div style="float: right;" class="fragment">
+						<p class='highlight-orange' style="font-size:3em; height:400px; line-height:400px; vertical-align:middle">= DATA !</p>
+					</div>
+				</section>
+
+
+				<section>
+					<table align='center' style="font-size:32px">
+						<tr>
+							<th></th>
+							<th></th>
+							<th><img src="img/google_logo.png" width="80px" /><br />Alphabet</th>
+							<th><img src="img/apple_logo.svg" width="80px" /></th>
+							<th><img src="img/fb_logo.png" width="80px" /></th>
+							<th><img src="img/amazon_logo.jpeg" width="80px" /></th>
+							<th><img src="img/microsoft_logo.png" width="80px" /></th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Création</td>
+							<td>1998</td>
+							<td>1976</td>
+							<td>2004</td>
+							<td>1994</td>
+							<td>1975</td>
+						</tr>
+						<tr>
+							<td style="writing-mode:tb-rl; height:10px; font-size: 20px;" rowspan="2">2014 $Mds</td>
+							<td>C.A.</td>
+							<td>60</td>
+							<td>183</td>
+							<td>8</td>
+							<td>80</td>
+							<td>87</td>
+						</tr>
+						<tr>
+							<td>Bénéfice</td>
+							<td>13</td>
+							<td>40</td>
+							<td>1.5</td>
+							<td>0.3</td>
+							<td>22</td>
+						</tr>
+						<tr>
+							<td style="writing-mode:tb-rl; height:10px; font-size: 20px;" rowspan="2">2016-17 $Mds</td>
+							<td>C.A.</td>
+							<td>90</td>
+							<td>229</td>
+							<td>27</td>
+							<td>136</td>
+							<td>90</td>
+						</tr>
+						<tr>
+							<td>Bénéfice</td>
+							<td>19</td>
+							<td>48</td>
+							<td>10</td>
+							<td>2</td>
+							<td>21</td>
+						</tr>
+					</table>
+
+					<p style='font-size:14px'>
+						2014:<br />
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Google, Apple, Facebook, Amazon, Microsoft : Le logiciel libre peut-il résister à la colonisation technique et économique ?
+						</a>, Framasoft - 30/10/14 - pyg<br /><br />
+
+						2016-2017: pages respectives, Wikipedia<br />
+						<a href="http://markets.ft.com/research/Markets/Tearsheets/Financials?s=GOOGL:NSQ&subview=IncomeStatement">Alphabet Inc. 2015 Annual Report Form (10-K)</a>, EDGAR. United States Securities and Exchange Commission. February 27, 2016. Retrieved December 21, 2015.<br />
+						<a href="http://pdf.secdatabase.com/2624/0000320193-17-000070.pdf">Apple Form 10-K Annual Report</a>, November 3, 2017.<br />
+						<a href="https://www.google.com/finance?q=NASDAQ%3AFB&fstype=ii&ei=nGKVWPCkLYjHugTng68o">10-K Annual Report</a>, SEC Filings. Facebook. January 28, 2017. Retrieved February 3, 2017.<br />
+						<a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872417000011/amzn-20161231x10k.htm">AMAZON.COM, INC. FORM 10-K For the Fiscal Year Ended December 31, 2016</a>, United States Securities and Exchange Commission. August 5, 2017.<br />
+						<a href="https://www.microsoft.com/en-us/Investor/earnings/FY-2017-Q4/press-release-webcast">Microsoft Form 10-K, Fiscal Year Ended June 30, 2017</a>, sec.gov. U.S. Securities and Exchange Commission. July 21, 2016. Retrieved June 18, 2017.
+					</p>
+				</section>
+
+				<section>
+					<h2>Et de l'autre côté du monde ?</h2>
+				</section>
+
+
+				<section>
+					<h2>BAT</h2>
+					<div>
+						<img src="img/bat.jpg" height="600px" style="border:none;position:absolute;left:0;top:0;z-index:0" class="fragment" data-fragment-index="1" />
+						<img src="img/bat_nope.jpg" height="600px" style="border:none;position:absolute;left:0;top:0;z-index:1" class="fragment" data-fragment-index="2" />
+					</div>
+					<p>
+						<span class="fragment"><span class='highlight-orange'>B</span>aidu</span>
+						<span class="fragment"><span class='highlight-orange'>A</span>libaba</span>
+						<span class="fragment"><span class='highlight-orange'>T</span>encent</span>
+					</p>
+					<div>
+						<img src="img/batmetal.png" height="600px" style="border:none;position:absolute;right:0;top:0;z-index:0" class="fragment" data-fragment-index="3" />
+						<img src="img/batmetal_nope.png" height="600px" style="border:none;position:absolute;right:0;top:0;z-index:1" class="fragment" data-fragment-index="4" />
+					</div>
+				</section>
+
+
+
+				<section>
+					<h2>Bilan</h2>
+				</section>
+
+				<section>
+					<div style="float:left; font-size:0.9em">
+						<h3>Avantages</h3>
+						<ul>
+							<li>Synchronisés</li>
+							<li>Interconnectés</li>
+							<li>Personnalisables</li>
+							<li>Ergonomiques</li>
+							<li>Mobiles (smartphone)</li>
+							<li>Services: carte, etc.</li>
+						</ul>
+					</div>
+					<div style="float:right; font-size:0.9em" class="fragment">
+						<h3>Inconvénients</h3>
+						<ul>
+							<li>Limité à une suite logicielle</li>
+							<li>Trace: GPS, historique, etc.</li>
+							<li>Rien ne vous appartient</li>
+							<li>Droit d'accès non garanti</li>
+							<li>Revente de données</li>
+							<li>Vie privée</li>
+						</ul>
+					</div>
+				</section>
+
+
+
+				<section>
+					<h2>Éthique, vie privée</h2>
+				</section>
+
+				<section>
+					<h3>Fermeture</h3>
+					<p>
+						Code propriétaire = boîte noire
+						<ul>
+							<li>Pérennité ?</li>
+							<li>Interopérabilité ?</li>
+							<li>Dépendance à l'outil ?</li>
+							<li>Changement de conditions d'utilisation ?</li>
+						</ul>
+					</p>
+					<p style='font-size:14px'>
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Google, Apple, Facebook, Amazon, Microsoft : Le logiciel libre peut-il résister à la colonisation technique et économique ?
+						</a>,
+						30/10/14 - Framasoft, pyg
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Révélations d'E. Snowden (PRISM)<br/>
+						Patriot Act &#10132; Espionnage industriel<br/>
+						Projet de loi sur le terrorisme &#10132; « Je n'ai rien à cacher »<br/>
+						Profilage des utilisateurs &#10132; « Si c'est gratuit, vous êtes le produit »<br/>
+					</p>
+					<p style='font-size:14px'>
+						Framasoft - présentation -
+						<a href='https://wiki.framasoft.org/communication/accueil' target='_blank'>
+							Google, Apple, Facebook, Amazon, Microsoft : Le logiciel libre peut-il résister à la colonisation technique et économique ?
+						</a>,
+						30/10/14 - pyg
+					</p>
+				</section>
+				<section>
+					<img src="img/PRISM_Collection_Details.jpg" width="80%" />
+					<p style='font-size:14px'>
+						<a href='https://en.wikipedia.org/wiki/PRISM_(surveillance_program)/' target='_blank'>
+							Wikipedia
+						</a>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Exemple: permissions pour une application Android
+					</p>
+					<div style="float:left;font-size:0.6em">
+						<ul>
+							<li>Identité</li>
+							<li>Capteurs corporels </li>
+							<li>Calendrier</li>
+							<li>Contacts</li>
+							<li>Localisation</li>
+							<li>Microphone</li>
+							<li>Appareil photo</li>
+							<li>Téléphone/SMS</li>
+							<li>Stockage</li>
+							<li>Achat interne à l'application</li>
+							<li>Historique de l'appareil/l'application</li>
+							<li>Paramètre de données cellulaire</li>
+							<li>Photos/Media/Fichier</li>
+							<li>Etc.</li>
+						</ul>
+					</div>
+					<div style="float:right;font-size:0.6em">
+						<ul style="list-style:none">
+							<li>&#10132; qui vous <span class='highlight-orange'>êtes</span></li>
+							<li>&#10132; comment vous vous <span class='highlight-orange'>comportez/bougez</span></li>
+							<li>&#10132; comment vous vous <span class='highlight-orange'>organisez</span> et avec qui</li>
+							<li>&#10132; qui vous <span class='highlight-orange'>côtoyez</span></li>
+							<li>&#10132; <span class='highlight-orange'>où</span> vous êtes, en temps réel</li>
+							<li>&#10132; ce que vous <span class='highlight-orange'>dites</span></li>
+							<li>&#10132; ...</li>
+							<li>&#10132; ce que vous <span class='highlight-orange'>échangez</span> et avec qui</li>
+							<li>&#10132; ce que vous <span class='highlight-orange'>avez</span></li>
+							<li>&#10132; ce qui vous <span class='highlight-orange'>intéresse</span></li>
+							<li>&#10132; vos <span class='highlight-orange'>centres d'intérêt</span>, ce que vous <span class='highlight-orange'>consultez</span></li>
+							<li>&#10132; comment vous <span class='highlight-orange'>échangez</span></li>
+							<li>&#10132; ce que vous <span class='highlight-orange'>manipulez</span></li>
+							<li></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>
+						Vos données sont importantes !
+					</h3>
+				</section>
+
+			</section>
+
+
+
+			<section>
+
+				<section>
+					<h2>RECHERCHE</h2>
+				</section>
+
+				<section>
+					<h3>PHYSIQUE : LHC - ATLAS</h3>
+				</section>
+
+
+				<section>
+					<img src="img/LHC_ATLAS.jpeg" width="100%"/>
+					<p style='font-size: 14px'>
+						<a href='https://www.nature.com/news/2011/110119/full/469282a.html' target='_blank'>High-energy physics: Down the petabyte highway</a>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						46m de long, 25m de diamètre, 7 000 tonnes<br/>
+						2010 : 13 Po (global, 4 détecteurs du LHC)<br/>
+						Projet Grid : 200 000 coeurs de calcul, 150 Po d'espace disque, 130 centres, distribués sur 34 pays<br/>
+						<br/>
+					</p>
+					<p style='font-size:14px'>
+						<a href='https://atlas.cern/discover/detector' target='_blank'>ATLAS detector</a><br/>
+						<a href='https://www.nature.com/news/2011/110119/full/469282a.html' target='_blank'>High-energy physics: Down the petabyte highway</a><br/>
+						<a href='https://arxiv.org/find/hep-ex/1/au:+Collaboration_ATLAS/0/1/0/all/0/1' target='_blank'>arXiv.org</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>BIOLOGIE : Séquençage - Human Genome Project (HGP)</h3>
+				</section>
+
+				<section>
+					<h3>Premier génome séquencé</h3>
+					<p>
+						Niveaux de qualité considérés :
+					</p>
+					<ol>
+						<li>
+							Séquençage 'brouillon' ('draft')
+							<ul>
+								<li>couverture <span class='highlight-orange'>~90%</span> du génome</li>
+								<li>précision de <span class='highlight-orange'>~99.9%</span></li>
+							</ul>
+						</li>
+						<li>
+							Séquençage 'final' ('finished')
+							<ul>
+								<li>couverture <span class='highlight-orange'>>95%</span> du génome</li>
+								<li>précision de <span class='highlight-orange'>~99.99%</span></li>
+							</ul>
+						</li>
+					</ol>
+					<p style='font-size: 14px'>
+						<a href='https://www.genome.gov/sequencingcosts/' target='_blank'>Genome sequencing costs</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>Premier génome séquencé</h3>
+					<p class="fragment">
+						Brouillon : <span class='highlight-orange'>15 mois</span> (avril 1999 à juin 2000)<br/>
+						Coût estimé : <span class='highlight-orange'>~$300 millions</span> (NIH ~50-60%)
+					</p>
+					<p class="fragment">
+						Raffinage : brouillon &#10132; final (fin en 2003)<br/>
+						Coût estimé : <span class='highlight-orange'>~$150 millions</span>
+					</p>
+					<p class="fragment">
+						Projet total : <span class='highlight-orange'>~13 ans</span><br/>
+						Coût estimé : <span class='highlight-orange'>~$2.7 milliards</span>
+					</p>
+
+					<p style='font-size: 14px'>
+						<a href='https://www.genome.gov/sequencingcosts/' target='_blank'>Genome sequencing costs</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>Séquençage - coûts estimés</h3>
+					<p class="fragment">
+						2006 - "brouillon" haute-qualité génome : <span class='highlight-orange'>~14M$</span>
+					</p>
+					<p class="fragment">
+						~2015 - "brouillon" haute-qualité génome : <span class='highlight-orange'>>$4000</span>
+					</p>
+					<p class="fragment">
+						Fin 2015
+					</p>
+					<p class="fragment">
+						"brouillon" haute-qualité génome : <span class='highlight-orange'><$1500</span>
+					</p>
+					<p class="fragment">
+						"brouillon" haute-qualité whole-exome : <span class='highlight-orange'><$1000</span>
+					</p>
+
+					<p style='font-size: 14px'>
+						<a href='https://www.genome.gov/sequencingcosts/' target='_blank'>Genome sequencing costs</a>
+					</p>
+				</section>
+
+				<section>
+					<img src="img/1000_genome_project.jpeg" width="40%"/>
+					<p style='font-size: 14px'>
+						Kevin Davies, <a href='https://isbnsearch.org/isbn/1416569596' target='_blank'>ISBN 1-4165-6959-6, New York: Free Press, 2010</a>.
+					</p>
+				</section>
+
+				<section>
+					<div style='display:inline'>
+						<img src="img/23_and_me_logo.png" width="38%" style='display:inline' />
+						<img src="img/23_and_me_us_service.png" width="50%" style='display:inline' />
+					</div>
+					<p style='font-size: 14px'>
+						<a href='https://www.23andme.com' target='_blank'>23andme</a> - accessed 2017/09/13
+					</p>
+				</section>
+
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Techniques</h2>
+				</section>
+
+				<section>
+					<p class="">Différentes
+						<span class="fragment"><span class="highlight-orange">stratégies </span></span>
+						<span class="fragment">pour différents </span>
+						<span class="fragment"><span class="highlight-orange">besoins</span></span>
+					</p>
+				</section>
+
+				<section>
+						<h4 class="highlight-orange">Calculer sur un jeu de données dépassant la capacité de lecture</h4>
+						<ul style="font-size:70%">
+							<li class="fragment">Lire en flux</li>
+							<li class="fragment">Diviser pour mieux régner</li>
+						</ul>
+						</br></br>
+						<div style="font-size:40%" class="fragment">
+							Pour aller plus loin :
+							<a href="https://www.bbdc.berlin/fileadmin/news/photos/BD_SummerSchool-2017/StreamProcessing-TilmannRabl.pdf">
+								Big Data Stream Processing, Tilmann Rabl, DIMA 2017
+							</a>
+						</div>
+				</section>
+
+				<section>
+						<h4 class="highlight-orange "><span class="fragment">Analyser au plus vite en perdant le moins d'information possible</span></h4>
+						<ul style="font-size:70%">
+							<li class="fragment">Simplifier (théorie de l'esquisse)</li>
+							<li class="fragment">Réduire de dimensionnalité (filtrer)</li>
+							<li class="fragment">Sous-échantillonner</li>
+							<li class="fragment">Accepter l'approximation selon une certaine probabilité (heuristique)</li>
+						</ul>
+					</br></br>
+						<div style="font-size:40%" class="fragment">
+							Pour aller plus loin :</br>
+							<ul style="list-style-type:none;">
+								<li><a href="http://case.edu/artsci/math/wells/pub/pdf/Sketch.pdf">Sketching (théorie de l'esquisse)</a></li>
+								<li><a href="https://fr.wikipedia.org/wiki/Th%C3%A9orie_des_cat%C3%A9gories">Théorie des catégories</a></li>
+								<li><a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">Réduction de dimensionnalité</a></li>
+								<li><a href="https://optimization.mccormick.northwestern.edu/index.php/Heuristic_algorithms">Algorithmes heuristiques</a></li>
+							</ul>
+						</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange ">Rendre comparable différents formats</h4>
+					<ul style="font-size:70%">
+						<li class="fragment">Detecter ce qui est similaire ou non</li>
+						<li class="fragment">Transformer les formats présents</li>
+						<!-- <li class="fragment">S'abstraire du format</li> -->
+					</ul>
+					</br></br>
+					<div style="font-size:40%" class="fragment">
+						Pour aller plus loin :
+						<a href="https://www.techrepublic.com/article/how-to-cope-with-the-big-data-variety-problem/">
+							How to cope with the big data variety problem
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange "><span class="fragment">S'assurer de la fiabilité de l'information</span></h4>
+					<ul style="font-size:70%">
+						<li class="fragment">Inférer les données manquantes</li>
+						<li class="fragment">Multiplier les sources pour plus de robustesse</li>
+						<li class="fragment">Indicer les sources pour plus de confiance</li>
+					</ul>
+					</br></br>
+					<div style="font-size:40%" class="fragment">
+						Pour aller plus loin :
+						<a href="http://da.qcri.org/dafna/home_sections/tutorial-ICDE16-CRV.pdf">
+							Scaling Up Truth Discovery
+						</a>
+					</div>
+				</section>
+
+				<!-- <section>
+					Limites intrinsèques à la technique ?
+				</section> -->
+			</section>
+
+			<section>
+				<section>
+					<h2>Moyens</h2>
+				</section>
+
+				<section>
+					<h3 style="color:red">Attention</h3>
+					<span class="fragment">Toutes les <span class="fragment highlight-red">méthodes </span> et <span class="fragment highlight-red">algorithmes </span> présentés sont dépendant du contexte et ne pourront <span class="fragment highlight-red">pas toujours etre utilisés</span></span>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange">Calculer sur un jeu de données dépassant la capacité de lecture</h4>
+					<ul style="font-size:70%">
+						<li class="fragment">
+							<span>Le streaming de fichiers et les tampons</span>
+							<img src="img/Tech_Stream.png" width="70%" style='margin:auto;display:block;background-color:#FFFFFF;' />
+						</li></br>
+						<li class="fragment">
+							<span>Utiliser des structures découpables et paralléliser les calculs</span>
+							<img src="img/Tech_Parallelisation.png" width="70%" style='margin:auto;display:block;background-color:#FFFFFF;' />
+						</li>
+					</ul>
+					</br></br>
+					<div style="font-size:30%" class="fragment">
+						Pour aller plus loin :
+						<ul style="list-style-type:none;">
+							<li><a href="http://www.sciencedirect.com/science/article/pii/S0022000009001226">Parallelizing XML data-streaming workflows via MapReduce</a></li>
+							<li><a href="http://people.seas.harvard.edu/~minilek/cs229r/fall15/index.html">Algorithms for Big Data</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange ">Analyser au plus vite en perdant le moins d'information possible</h4>
+					<ul style="font-size:70%">
+						<li class="fragment">
+							<span>Résumer les données en une "fonction"</span></br></br>
+							<div class="fragment" width="100%" style="display:flex">
+								<div style="width:33%;float:left;">
+									<div style="font-size:60%;text-align:center;">Algèbre, ex : regression linéaire</div></br>
+									<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg" style="background-color:#FFFFFF;margin:auto;display:block;"/>
+									<div style="font-size:60%;text-align:center;">f(x) = 3*x/20 + 5</div>
+								</div>
+								<div class="fragment" style="width:33%;float:left;">
+									<div style="font-size:60%;text-align:center;">Statistiques, ex : Chaines de Markov</div></br>
+									<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Chaine_de_markov_exemple_avec_boucles.svg" style="background-color:#FFFFFF;margin:auto;display:block;" width="80%"/>
+									<div style="font-size:60%;text-align:center;">Doudou le hamster, sa vie, son oeuvre</div>
+								</div>
+								<div class="fragment" style="width:33%;float:left;">
+									<div style="font-size:60%;text-align:center;">"Informatique", ex : Codage entropique</div></br>
+									<img src="./img/Tech_Compression.png" style="background-color:#FFFFFF;margin:auto;display:block;"/>
+									<div style="font-size:60%;text-align:center;">Compression par l'utilisation d'un dictionnaire</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</br></br>
+					<div style="font-size:30%" class="fragment">
+						<span>Pour aller plus loin :</span>
+						<ul style="list-style-type:none;">
+							<li><a href="http://people.seas.harvard.edu/~minilek/cs229r/fall15/index.html">Algorithms for Big Data</a></li>
+							<li><a href="https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov">Chaines de Markov</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<ul style="font-size:70%">
+						<li class="">
+							<span>Réduire l'espace dimentionnel par la détection de signatures</span>
+							<div width="100%" style="display:flex">
+								<div class="fragment" style="width:45%;float:left;margin-right:5%">
+									<div style="font-size:60%;text-align:center;"><span class="highlight-orange">Selection</span> : conserver les dimensions (variables) qui influent le plus sur le résultat</div>
+									<img src="http://rstatistics.net/wp-content/uploads/2014/09/Information-Value-Summary.png" style="margin:auto;display:block;"/>
+									<div style="font-size:60%;text-align:center;">Ex : Corrélation au résultat</div>
+								</div>
+								<div class="fragment" style="width:45%;float:right;">
+									<div style="font-size:60%;text-align:center;"><span class="highlight-orange">Extraction</span> : déterminer de nouvelles dimensions résumant celles de base</div>
+									<img src="img/Tech_PCA.png" width="80%" style="margin:auto;display:block;"/>
+									<div style="font-size:60%;text-align:center;">Ex : analyse en composantes principales</div>
+								</div>
+							</div>
+						</li></br>
+						<li class="fragment">Sous-échantillonner de façon représentative du jeu de données</li>
+						<li class="fragment">
+							<span>Accepter l'approximation selon une certaine probabilité (heuristique)</span></br>
+							<span style="font-size:60%">Définition : algorithmes stochastiques itératifs, qui progressent vers un optimum global</span></br>
+							<span style="font-size:60%">Traduction : algorithmes qui renvoit un ou plusieurs réponses associée(s) à une probabilité</span></li>
+					</ul>
+					</br></br>
+					<div style="font-size:30%" class="fragment">
+						Pour aller plus loin :
+						<ul style="list-style-type:none;">
+							<li><a href="http://rstatistics.net/variable-importance-of-predictors-that-contribute-most-significantly-to-a-response-variable-in-r/">Most contribution variables</a></li>
+							<li><a href="https://en.wikipedia.org/wiki/Feature_selection#Structure_learning">Selection de variables</a></li>
+							<li><a href="http://maths.cnam.fr/IMG/pdf/A-C-P-.pdf">Analyse en composante principale (PCA)</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange ">Rendre comparable différentes sources</h4>
+					<ul style="font-size:70%">
+						<li class="fragment">
+							<span>Détecter les informations similaires et les rassembler</span>
+							<div style="width:100%;display:flex">
+								<div style="width:50%;float:left;">
+									<table style="font-size:60%;">
+										<tr>
+											<td rowspan="3" style="vertical-align:middle">
+												4181234567</br>
+												581-789-1230</br>
+												03-87-12-34-56</br>
+												0612457896</br>
+												5147894560</br>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												4181234567</br>
+												581-789-1230</br>
+												5147894560</br>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												03-87-12-34-56</br>
+												0612457896</br>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div style="width:50%;float:right;font-size:60%;">
+									Exemples : Text-mining
+								</div>
+							</div>
+						</li></br>
+						<li class="fragment">
+							<span>Reformater les données</span>
+							<table style="font-size:60%;">
+								<tr>
+									<td>
+										4181234567</br>
+										581-789-1230</br>
+										5147894560</br>
+									</td>
+									<td>
+										418-123-4567</br>
+										581-789-1230</br>
+										514-789-4560</br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										03-87-12-34-56</br>
+										0612457896</br>
+									</td>
+									<td>
+										03-87-12-34-56</br>
+										06-12-45-78-96</br>
+									</td>
+								</tr>
+							</table>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4 class="highlight-orange ">S'assurer de la fiabilité de l'information</h4>
+					<ul style="font-size:70%">
+						<li class="fragment">
+							<span>Imputation des données manquantes</span>
+							<ul style="font-size:60%">
+								<li>Pondération en donnant un poids nul aux NA</li>
+								<li>Simulation de données d'après le comportement des données de meme catégorie</li>
+								<li>Calcul d'une valeur n'influant pas les analyses (moyenne, medianne)</li>
+							</ul>
+						</li>
+						<li class="fragment">Multiplier les sources pour plus de robustesse</li>
+						<li class="fragment">
+							<span>Donner une valeur de confiance dans la source ou le résultat</span></br>
+							<ul style="font-size:60%">
+								<li>Donner un indice de confiance à chaque source et pondérer avec</li>
+								<li>Calculer des indices de performance de l'analyse (risque de première espèce, sensibilité, ...)</li>
+							</ul>
+							<img src="img/Tech_confiance.png" style="display:block;margin:auto;" width="50%"/>
+						</li>
+					</ul></br></br>
+					<div style="font-size:30%" class="fragment">
+						Pour aller plus loin :
+						<ul style="list-style-type:none;">
+							<li><a href="http://da.qcri.org/dafna/home_sections/tutorial-ICDE16-CRV.pdf">Scaling Up Truth Discovery</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Et le <span class="fragment highlight-red">machine learning</span> dans tout ça ?</h3>
+					<span class="fragment" style="font-size:50%">Ou apprentissage automatique en français</span>
+				</section>
+
+				<section>
+					<span style="font-size:70%"><em>"L’apprentissage automatique, c’est la capacité d’un ordinateur à apprendre sans avoir été explicitement programmé."</em> - <a href="https://en.wikipedia.org/wiki/Arthur_Samuel">Arthur Samuel</a></span>
+				</section>
+
+				<section>
+					<p style="font-size:60%">Les algorithmes d'apprentissage automatique consistent à définir un <span class="highlight-orange">modèle</span> qui décrit au mieux les données dans le but de <span class="highlight-orange">prédire</span> la valeur (qualitative ou quantitative) de tout nouvel individu qui répond aux <span class="highlight-orange">mêmes variables</span></p>
+					<span class="fragment" style="font-size:60%">On distingue deux catégories d'apprentissage :</span>
+					<div style="display:flex;">
+						<div class="fragment" style="width:40%;float:left;font-size:50%;">
+							<span><span class="highlight-orange">Supervisé</span> : définir des règles pour prédire une variable réponse connue</span>
+							<img src="https://qph.ec.quoracdn.net/main-qimg-b17755d2e0ffb326d8c39b7f3e07e03b-c" style="background-color:#FFFFFF;">
+						</div>
+						<div class="fragment" style="width:50%;float:right;font-size:50%;">
+							<span><span class="highlight-orange">Non supervisé</span> : décrire la structure sous-jacente d'un jeu de données sans connaitre la réalité</span>
+							<img src="http://www.exegetic.biz/static/img/2015/09/xclara-clusters-colour.png" style="background-color:#FFFFFF;">
+						</div>
+					</div>
+					<div style="font-size:30%" class="fragment">
+						<span>Et en fait sans le dire, on a déjà cité plus haut des types d'apprentissage automatique : clustering, data-mining, regression linéaire, ...</span>
+						</br></br>
+						Pour aller plus loin :
+						<ul style="list-style-type:none;">
+							<li><a href="https://mitpress.mit.edu/books/introduction-machine-learning">Introduction to Machine Learning</a></li>
+						</ul>
+					</div>
+
+				</section>
+
+				<section>
+					<h3 class="highlight-orange">Les limites</h3>
+					<div style="font-size:70%">
+						<ul>
+							<li>Risque de confusion corrélation / causalité</li>
+							<li>Biais intrinsèques à chaque stratégie</li>
+							<li>Sensibilité plus ou moins forte aux faux positifs</li>
+							<li>Ne donne pas de résultats fiable si trop peu de données (taille et representativité)</li>
+						</br>
+						<p>Et concernant le machine learning, des limites supplémentaires</p>
+							<li>Mise en oeuvre demandant une expertise</li>
+							<li>Temps de calcul parfois très couteux (temps comme taille)</li>
+							<li>Effet boite noire pour la plupart</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3 class="highlight-orange">Conclusion</h3>
+					<ul style="font-size:70%">
+						<li style="margin-top:40px" class="fragment">Utiliser chacune des <span class="fragment highlight-red">stratégies</span> demande une <span class="fragment highlight-red">connaissance</span> de son jeu de données</li>
+						<li style="margin-top:40px" class="fragment">Une <span class="fragment highlight-red">méthode</span> peu etre plus adaptée selon un <span class="fragment highlight-red">contexte</span> </br><span style="font-size:50%">(séquencage, détection de causalité, prédiction de la mort des personnages de GoT, etc.)</span></li>
+						<li style="margin-top:40px" class="fragment">L'<span class="fragment highlight-red">intelligence</span> artificielle est <span class="fragment highlight-red">débile</span> si elle est <span class="fragment highlight-red">mal utilisée</span></li>
+					</ul>
+
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Des <span class='highlight-orange'>Questions</span> ?</h1>
+			</section>
+
+		</div>
+	</div>
+
+	<!-- IMPORT SCRIPTS -->
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true, // display control
+			progress: true, // progress bar
+			history: true, // push slide changes to browser history
+			slideNumber: true, // print screen
+			center: true, // vertical center
+			overview: true, // enable slide overview
+			loop: true, // loop presentation
+			fragments: true, // enable fragment globally
+			shuffle: false, // shuffle slides on loading
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// your allotted time for presentation
+			allottedTime: 3 * 3600 * 1000, // 3 hours
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+					src: 'lib/js/classList.js',
+					condition: function() {
+						return !document.body.classList;
+					}
+				},
+				{
+					src: 'plugin/markdown/marked.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: 'plugin/markdown/markdown.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.configure({
+							'languages': ['javascript', 'bash', 'python']
+						});
+						hljs.initHighlightingOnLoad();
+					}
+				},
+				{
+					src: 'plugin/zoom-js/zoom.js',
+					async: true
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/elapsed-time-bar/elapsed-time-bar.js'
+				}
+			]
+		});
+	</script>
+
+</body>
+
+</html>

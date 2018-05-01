@@ -1,0 +1,21 @@
+
+/*reveal init*/
+.reveal .slides section .highlight-orange {
+  opacity: 1;
+  visibility: inherit;
+  color: #FF5709;
+}
+
+/*test fade*/
+/*Works for fading but non fragment highlight-orange stay white*/
+/*.reveal .slides section .fragment.highlight-orange,
+.reveal .slides section .fragment.highlight-current-orange
+ {
+  opacity: 1;
+  visibility: inherit; }
+
+.reveal .slides section .fragment.highlight-orange.visible {
+  color: #FF5709; }
+
+.reveal .slides section .fragment.highlight-current-orange.current-fragment {
+  color: #FF5709; }*/

@@ -1,0 +1,2 @@
+# Ecrit en pseudo code et non pas en python
+https://bioinfo-fr.net/eh-toi-revcomp-tu-lecris-comment
